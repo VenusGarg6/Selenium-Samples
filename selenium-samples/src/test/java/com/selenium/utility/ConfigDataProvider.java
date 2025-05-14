@@ -27,7 +27,4 @@ public class ConfigDataProvider {
 		return pro.getProperty("testurl");
 	}
 	
-	public String getLoginDataFile() {
-		return pro.getProperty("logindatafilepath");
-	}
 }

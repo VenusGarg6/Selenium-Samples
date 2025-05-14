@@ -6,10 +6,10 @@
   </listeners>
   <test thread-count="5" name="Test">
     <classes>
-<!--      <class name="com.selenium.testcases.LoginTestDataDrivenTesting"/>-->
+      <class name="com.selenium.testcases.LoginTestDataDrivenTesting"/>
 <!--      <class name="com.selenium.testcases.SearchTest"/>-->
 <!--      <class name="com.selenium.testcases.DashboardTest"/>-->
-      <class name="com.selenium.testcases.PaymentTest"/>
+<!--      <class name="com.selenium.testcases.PaymentTest"/>-->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

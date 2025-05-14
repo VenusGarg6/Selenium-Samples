@@ -2,12 +2,14 @@ package com.selenium.testcases;
 
 import java.io.IOException;
 
+import org.openqa.selenium.remote.Browser;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.selenium.pages.BaseTest;
 import com.selenium.pages.LoginPage;
+import com.selenium.utility.ConfigDataProvider;
 import com.selenium.utility.ReadExcelFile;
 
 public class LoginTestDataDrivenTesting extends BaseTest{
@@ -17,16 +19,19 @@ public class LoginTestDataDrivenTesting extends BaseTest{
 	void verifyLogin(String userName, String userPwd) throws IOException {
 		LoginPage lp=new LoginPage(driver);
 		lp.loginPortal(userName, userPwd);
+		ConfigDataProvider config=new ConfigDataProvider();
 		
-		if(userName.equals("Demo12") && userPwd.equals("Test123456$"))
+		if(userName.trim().equalsIgnoreCase("Demo12") && userPwd.equals("Test123456$"))
 		{
-			System.out.println("Test Passed");
+			System.out.println("\n--------\nTest Passed");
 			Assert.assertTrue(true);
 			lp.logout();
 		}
 		else
 		{
 			captureScreenShot(driver,"VerifyLogin");
+			System.out.println("\n--------\nFailed data--- username="+userName+", Password="+userPwd);
+			driver.navigate().to(config.getStagingUrl());
 			Assert.assertTrue(false);
 		}
 	}

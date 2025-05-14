@@ -6,13 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.selenium.testcases.PaymentTest">
+      <class name="com.selenium.testcases.LoginTestDataDrivenTesting">
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
-          <include name="paymentTestCase"/>
+          <include name="verifyLogin" invocation-numbers="1 2 6 7 8 9 10 11 13"/>
         </methods>
-      </class> <!-- com.selenium.testcases.PaymentTest -->
+      </class> <!-- com.selenium.testcases.LoginTestDataDrivenTesting -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
